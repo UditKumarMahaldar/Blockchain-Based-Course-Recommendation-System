@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Course Recommendation System</title>
+    <style>
+      /* Topbar */
+      .topbar {
+        background-color: #4267B2; /* Change the color of the topbar here */
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Logo */
+      .logo {
+        font-family: Arial, sans-serif;
+        color: #FFFFFF;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Search bar */
+      .search {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        position: relative;
+      }
+
+      .search input {
+        height: 50px;
+        width: 500px;
+        border-radius: 25px;
+        border: none;
+        padding: 0 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        font-size: 18px;
+        outline: none;
+      }
+
+      .search input:focus {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .search button {
+        height: 50px;
+        width: 50px;
+        background-color: #4267B2; /* Change the color of the search button here */
+        color: #FFFFFF;
+        border-radius: 50%;
+        border: none;
+        margin-left: 10px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+      }
+
+      .search button:hover {
+        background-color: #3B5998; /* Change the color of the search button on hover here */
+      }
+
+      .search input:focus + button {
+        transform: translateX(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="logo">BLOCKCHAIN BASED COURSE RECOMMENDER</div>
+    </div>
+
+    <!-- Search bar -->
+    <form class="search" method="POST" action="{{ url_for('recommend') }}">
+      <input type="text" name="course_name" placeholder="Search for courses...">
+      <button type="submit">Go</button>
+    </form>
+  </body>
+</html>
